@@ -1,0 +1,61 @@
+<%= form_for(@student) do |f| %>
+  <% if @student.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
+
+      <ul>
+      <% @student.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nameofstu %><br>
+    <%= f.text_field :nameofstu %>
+  </div>
+  <div class="field">
+    <%= f.label :nameofuniversity %><br>
+    <%= f.text_field :nameofuniversity %>
+  </div>
+  <div class="field">
+    <%= f.label :telnumer %><br>
+    <%= f.text_field :telnumer %>
+  </div>
+  <div class="field">
+    <%= f.label :emailofstu %><br>
+    <%= f.text_field :emailofstu %>
+  </div>
+  <div class="field">
+    <%= f.label :addressofstu %><br>
+    <%= f.text_field :addressofstu %>
+  </div>
+  <div class="field">
+    <%= f.label :birthday %><br>
+    <%= f.date_select :birthday %>
+  </div>
+  <div class="field">
+    <%= f.label :graduate %><br>
+    <%= f.text_field :graduate %>
+  </div>
+  <div class="field">
+    <%= f.label :dayoftoroku %><br>
+    <%= f.date_select :dayoftoroku %>
+  </div>
+  <div class="field">
+    <%= f.label :dayofentrysheet %><br>
+    <%= f.date_select :dayofentrysheet %>
+  </div>
+  <div class="field">
+    <%= f.label :dayofraisya %><br>
+    <%= f.text_field :dayofraisya %>
+  </div>
+  <div class="field">
+    <%= f.label :memoofstu %><br>
+    <%= f.text_field :memoofstu %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

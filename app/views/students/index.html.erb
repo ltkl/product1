@@ -1,0 +1,45 @@
+<h1>Listing students</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nameofstu</th>
+      <th>Nameofuniversity</th>
+      <th>Telnumer</th>
+      <th>Emailofstu</th>
+      <th>Addressofstu</th>
+      <th>Birthday</th>
+      <th>Graduate</th>
+      <th>Dayoftoroku</th>
+      <th>Dayofentrysheet</th>
+      <th>Dayofraisya</th>
+      <th>Memoofstu</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @students.each do |student| %>
+      <tr>
+        <td><%= student.nameofstu %></td>
+        <td><%= student.nameofuniversity %></td>
+        <td><%= student.telnumer %></td>
+        <td><%= student.emailofstu %></td>
+        <td><%= student.addressofstu %></td>
+        <td><%= student.birthday %></td>
+        <td><%= student.graduate %></td>
+        <td><%= student.dayoftoroku %></td>
+        <td><%= student.dayofentrysheet %></td>
+        <td><%= student.dayofraisya %></td>
+        <td><%= student.memoofstu %></td>
+        <td><%= link_to 'Show', student %></td>
+        <td><%= link_to 'Edit', edit_student_path(student) %></td>
+        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Student', new_student_path %>
